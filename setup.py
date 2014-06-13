@@ -43,7 +43,7 @@ from setuptools import setup
 __plugin_name__ = "Pieces"
 __author__ = "Nick Lanham"
 __author_email__ = "nick@afternight.org"
-__version__ = "0.5"
+__version__ = "0.6"
 __url__ = "https://github.com/nicklan/Deluge-Pieces-Plugin"
 __license__ = "GPLv3"
 __description__ = "Add a tab showing the status of each piece of the selected torrent"
@@ -93,12 +93,12 @@ setup(
     packages=[__plugin_name__.lower()],
     package_data = __pkg_data__,
 
-    entry_points="""
-    [deluge.plugin.core]
-    %s = %s:CorePlugin
-    [deluge.plugin.gtkui]
-    %s = %s:GtkUIPlugin
-    [deluge.plugin.web]
-    %s = %s:WebUIPlugin
-    """ % ((__plugin_name__, __plugin_name__.lower())*3)
+    entry_points="""\
+[deluge.plugin.core]
+%s = %s:CorePlugin
+[deluge.plugin.gtkui]
+%s = %s:GtkUIPlugin
+[deluge.plugin.web]
+%s = %s:WebUIPlugin\
+""" % ((__plugin_name__, __plugin_name__.lower())*3)
 )

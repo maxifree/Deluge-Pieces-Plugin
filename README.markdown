@@ -31,18 +31,24 @@ You can select multiple pieces in a few ways:
 * Holding Ctrl will start selecting pieces without unselecting the ones you have already selected  
 
 
-Underneath all the pieces is a checkbox that will allow you to always
-prioritize the first un-downloaded piece of the torrent. This lets you
-start watching a movie while it is still downloading. After completing
+Underneath all the pieces is a checkbox that will allow you to enable
+sequential download of the torrent. This lets you start watching a movie
+while it is still downloading. After completing
 the torrent you should continue to seed for a while, because this
 behaviour is actually not sociable and bad for the torrent
-protocol. Please use with care. 
+protocol. Please use when there are a lot of seeders in swarm.
 
 
 To install this plugin in deluge: go to edit, preferences, plugins,
 install plugin and select the .egg file.
 
 # Version Info
+
+## Version 0.6
+* Replaced first un-downloaded piece priority with libtorrent's sequential
+download feature
+* Changed colors to match default Deluge downloading/seeding icons
+* Added travis config
 
 ## Version 0.5
 * Plugin works in client/server and "Classic" mode
@@ -61,7 +67,7 @@ enable watching of movies before they are completely downloaded.
 * Support multi-piece selection
 * Don't use this version, it has a bug that will cause deluge (libtorrent) to segfault
 
-## Version 0.3
+## Version 0.2
 * Finished/Seeding torrents now display correctly
 * Tooltip to show which piece you are hovering over
 * Ability to set priorities for individual pieces (via right click menu)

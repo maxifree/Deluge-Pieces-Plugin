@@ -352,7 +352,7 @@ class PiecesTab(Tab):
 
         vb = gtk.VBox()
         vb.add(self._ms)
-        self.cb = gtk.CheckButton(label="Set priority of first un-downloaded piece to High")
+        self.cb = gtk.CheckButton(label="Enable sequential download")
         self.cb.connect("toggled",self.onPrioTogg)
         vb.pack_end(self.cb,expand=False,fill=False,padding=5)
 
@@ -376,9 +376,9 @@ class PiecesTab(Tab):
                 if not(self._showed_prio_warn):
                     reactor.callLater(0,self._showPrioWarn)
                     self._showed_prio_warn = True
-                client.pieces.add_priority_torrent(self._current)
+                client.pieces.set_sequential_torrent(self._current,True)
             else:
-                client.pieces.del_priority_torrent(self._current)
+                client.pieces.set_sequential_torrent(self._current,False)
         else:
             widget.set_active(False)
 
@@ -442,7 +442,7 @@ class PiecesTab(Tab):
                 #new torrent selected, clear the selected pieces, update priority checkbox
                 self._ms.resetSelected()
                 self._current = selected
-                client.pieces.is_priority_torrent(self._current).addCallback(self.cb.set_active)
+                client.pieces.is_sequential_torrent(self._current).addCallback(self.cb.set_active)
         else:
             # No torrent is selected in the torrentview
             return
