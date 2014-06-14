@@ -71,12 +71,12 @@ You can select multiple pieces in a few ways.
    ones you have already selected
 
 
-Underneath all the pieces is a checkbox that will allow you to always
-prioritize the first un-downloaded piece of the torrent. This lets you
-start watching a movie while it is still downloading. After completing
+Underneath all the pieces is a checkbox that will allow you to enable
+sequential download of the torrent. This lets you start watching a movie
+while it is still downloading. After completing
 the torrent you should continue to seed for a while, because this
 behaviour is actually not sociable and bad for the torrent
-protocol. Please use with care. 
+protocol. Please use when there are a lot of seeders in swarm.
 """
 __pkg_data__ = {__plugin_name__.lower(): ["template/*", "data/*"]}
 
