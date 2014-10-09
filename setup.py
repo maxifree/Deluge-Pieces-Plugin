@@ -76,7 +76,8 @@ sequential download of the torrent. This lets you start watching a movie
 while it is still downloading. After completing
 the torrent you should continue to seed for a while, because this
 behaviour is actually not sociable and bad for the torrent
-protocol. Please use when there are a lot of seeders in swarm.
+protocol. Please don't use this option when the swarm is weak
+and doesn't have a good number of seeders.
 """
 __pkg_data__ = {__plugin_name__.lower(): ["template/*", "data/*"]}
 
